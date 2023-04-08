@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "d49477bc-db7b-44ab-99c8-64ffe5db86c2",
+		"name": "MrMsUMN2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21606607"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": []
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "Registrasi Mahesa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ssddss",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "/C:/Users/farre/OneDrive/Pictures/343621.jpg"
+								},
+								{
+									"key": "cv",
+									"type": "file",
+									"src": "/C:/Users/farre/OneDrive/Pictures/343620.jpg"
+								},
+								{
+									"key": "id",
+									"value": "00000055700",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/api/mahesa-registration",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"mahesa-registration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_url",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
