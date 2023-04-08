@@ -94,6 +94,13 @@ model peserta {
   QuestionType           String   @db.Char(1)
 }
 
+model peserta_2023 {
+  StudentID              String   @id @db.VarChar(11)  
+  Name                   String   @db.VarChar(255)  
+  picture                String   @db.VarChar(255)
+  cv                     String   @db.VarChar(255)  
+}
+
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
 model peserta_candidate {
   StudentID      String @db.VarChar(11)
