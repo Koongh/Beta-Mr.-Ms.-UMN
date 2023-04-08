@@ -87,7 +87,7 @@ const processInput = (req : NextApiRequest, saveLocally: boolean) => {
                     const oldPath = profilePicture.filepath;
                     const newPath = path.join(savePP, profilePicture.newFilename);
                     filesys.renameSync(oldPath, newPath);
-                    userData.picture = newPath;
+                    userData.picture = path.join("/public/images/profile_picture", profilePicture.newFilename);
                 }
             }
    
@@ -115,7 +115,7 @@ const processInput = (req : NextApiRequest, saveLocally: boolean) => {
                     const olPath = cv.filepath;
                     const nePath = path.join(saveCV, cv.newFilename);
                     filesys.renameSync(olPath, nePath);            
-                    userData.cv = nePath;
+                    userData.cv = path.join("/public/files/cv", cv.newFilename);
         
                 }
             }  

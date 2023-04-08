@@ -1,8 +1,8 @@
-const protectedRoutes = [
+const protectedRoutes : any = [
     '/test'
 ];
 
-const publicRoutes = [
+const publicRoutes : any = [
     '/',
     '/aboutus',
     '/faq',
