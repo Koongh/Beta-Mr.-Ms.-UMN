@@ -134,7 +134,7 @@ const processInput = (req : NextApiRequest, saveLocally: boolean) => {
             }
 
 
-            resolve({fields, files});
+            resolve(userData);
         });
     });
 }
@@ -162,11 +162,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }    
 
     await processInput(req, true)
-        .then((response) => {
+        .then((result) => {
+            const APP_URL = process.env.NODE_ENV == 'production' ? process.env.APP_URL : 'http://localhost:3000';            
+            const data : any = result;
+            data.picture = APP_URL + data.picture;
+            data.cv = APP_URL + data.cv;            
             return res.status(500).json({
                 status : "SUCCESS",
                 code : 200,
                 message : "Berhasil daftar",
+                data
             });              
         }).catch((err) => {
             const {code, message, errors} = err;
