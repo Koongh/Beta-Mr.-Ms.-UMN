@@ -1,10 +1,12 @@
 import type { NextFetchEvent, NextRequest } from "next/server";
 import { cookies } from 'next/headers';
 import { NextResponse } from "next/server";
+import NextCors from "nextjs-cors";
 import {protectedRoutes, publicRoutes} from "./helpers/routes";
 
 export default async function middleware(req : NextRequest, res : NextResponse){
     const APP_URL = process.env.NODE_ENV == 'production' ? process.env.APP_URL : 'http://localhost:3000';
+
 
     if (req.nextUrl.pathname.startsWith('/_next') || req.nextUrl.pathname.startsWith('/api') || req.nextUrl.pathname.startsWith('/favicon') || req.nextUrl.pathname.startsWith('/_error') || req.nextUrl.pathname.startsWith('/404')){
         return NextResponse.next();        
@@ -48,4 +50,4 @@ export const config = {
     matcher: [
       '/((?!api|_next/static|_next/image|favicon.ico|Assets).*)',
     ],
-  }
+}

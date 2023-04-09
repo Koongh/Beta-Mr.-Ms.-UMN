@@ -28,11 +28,10 @@ const processInput = (req : NextApiRequest, saveLocally: boolean) => {
     const form = formidable(options);
     return new Promise((resolve, reject) => {
         form.parse(req, async (err : any, fields : any, files : any) => {
-
             const validationErrorList = [];
 
             const userData : any = {};
-            const {id = null, name = null} = fields;
+            const {id = '', name = ''} = fields;
 
             // ----------------------------------------
             // ID
@@ -148,6 +147,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           message: "Page not found",
         });
     }    
+
 
     try {
         await fs.readdir(path.join(process.cwd() + "/public", "/images"));

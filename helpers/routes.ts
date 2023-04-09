@@ -7,7 +7,8 @@ const publicRoutes : any = [
     '/aboutus',
     '/faq',
     '/recruitment',
-    '/loginwisanggeniadmin'
+    '/loginwisanggeniadmin',
+    '/form-regis'
 
 ];
 
